@@ -12,12 +12,14 @@ export default {
   },
   actions: {
     getToken ({ commit }) {
+      commit('loading/SET_LOADING', true, { root: true })
+
       oauth.getToken()
         .then(({ data }) => {
           commit('SET_ACCESS_TOKEN', data.access_token)
         })
         .finally(() => {
-          console.log('Done!')
+          commit('loading/SET_LOADING', false, { root: true })
         })
     }
   }
