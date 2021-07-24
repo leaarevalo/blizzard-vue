@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Index.vue'
+  name: 'HeaderBar'
 }
 </script>
 
